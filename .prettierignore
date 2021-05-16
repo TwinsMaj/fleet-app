@@ -1,0 +1,7 @@
+e2e
+build
+package.json
+package.lock.json
+coverage/
+.eslintcache
+node_modules
