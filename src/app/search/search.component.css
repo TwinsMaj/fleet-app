@@ -1,0 +1,24 @@
+.search-block {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid gray;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form--grid {
+    display: flex;
+}
+
+.search-form__input {
+    width: 200px;
+    margin-left: 12px;
+    padding: 8px 4px;
+    border: 1px solid #ccc;
+}
+
+.search-form__btn {
+    margin-left: 12px;
+}

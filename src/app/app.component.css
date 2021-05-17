@@ -1,0 +1,14 @@
+.header {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.first-column {
+	margin-top: 25px;
+	align-items: center;
+}
+
+.second-column {
+	margin-top: 25px;
+	border-width: 2px;
+}

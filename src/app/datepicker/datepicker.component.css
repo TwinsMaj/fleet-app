@@ -1,0 +1,24 @@
+.date-picker {
+    margin-top: 50px;
+    display: flex;
+}
+
+.date-picker__input {
+    width: 300px;
+    margin-left: 12px;
+    padding: 8px 4px;
+    border: 1px solid #ccc;
+    border-radius: 0%;
+}
+
+.date-picker__group {
+    display: flex;
+}
+
+.date-picker__btn {
+    margin-left: 12px;
+}
+
+.date-picker__label {
+    padding-top: 8px;
+}

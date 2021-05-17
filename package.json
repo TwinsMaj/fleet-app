@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint:fix": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss}\"",
-    "lint:verify": "prettier --config ./.prettierrc --list-different \"src/{app,environments}/**/*{.ts,.html,.scss}\"",
+    "format": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss}\"",
+    "format:verify": "prettier --config ./.prettierrc --list-different \"src/{app,environments}/**/*{.ts,.html,.scss}\"",
     "prepare": "rm -rf '.husky' && husky install && npm run prepare:husky",
     "prepare:husky": "npx husky add .husky/pre-commit 'npx lint-staged'"
   },
@@ -19,9 +19,17 @@
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
     "@angular/forms": "~12.0.0",
+    "@angular/localize": "~12.0.0",
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "@fortawesome/angular-fontawesome": "^0.9.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@ng-bootstrap/ng-bootstrap": "^9.1.1",
+    "@types/googlemaps": "^3.43.3",
     "bootstrap": "^5.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
@@ -45,8 +53,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "npm run lint:fix",
-      "npm run lint:verify"
+      "npm run format",
+      "npm run format:verify"
     ]
   }
 }

@@ -1,0 +1,18 @@
+<form class="date-picker form-inline">
+	<div class="date-picker__group form-group">
+		<label for="date" class="date-picker__label">Date</label>
+		<input
+			id="date"
+			class="form-control date-picker__input"
+			placeholder="yyyy-mm-dd"
+			name="datepicker"
+			[(ngModel)]="model"
+			ngbDatepicker
+			#d="ngbDatepicker"
+		/>
+	</div>
+	<button class="btn btn-outline-secondary" (click)="d.toggle()">
+		<fa-icon [icon]="faCalendar"></fa-icon>
+	</button>
+	<button class="date-picker__btn btn btn-primary">Go</button>
+</form>
