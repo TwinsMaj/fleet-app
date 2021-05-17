@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TokenValidator } from '../common/validators/token.validator';
 
 @Component({
 	selector: 'search-form',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-	constructor() {}
+	form = new FormGroup({
+		token: new FormControl('', [Validators.required, TokenValidator.noWhiteSpace]),
+	});
+
+	constructor() {
+		console.log(this.form);
+	}
 
 	ngOnInit(): void {}
+
+	get ctrl() {
+		return this.form.controls;
+	}
 }

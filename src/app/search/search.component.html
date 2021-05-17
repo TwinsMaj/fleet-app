@@ -1,9 +1,13 @@
 <div class="row search-block">
-    <form class="search-form">
-        <div class="search-form__grid form-group ">
-            <label id="apiKey" for="">API Key</label>
-            <input id="apiKey" type="text" class="search-form__input">
-        </div>
-        <button class="search-form__btn btn btn-primary">Go</button>
-    </form>
+	<form class="search-form" [formGroup]="form">
+		<div class="search-form__grid form-group">
+			<label id="apiKey" for="">API Key</label>
+			<input formControlName="token" id="token" type="text" class="search-form__input form-group" />
+            <div *ngIf="ctrl.token.touched && ctrl.token.invalid" class="alert alert-danger">
+                <div *ngIf="ctrl.token.errors?.required">API Token is required</div>
+                <div *ngIf="ctrl.token.errors?.noWhiteSpace">API Token cannot contain whitespaces</div>
+            </div>
+		</div>
+		<button class="search-form__btn btn btn-primary">Go</button>
+	</form>
 </div>
