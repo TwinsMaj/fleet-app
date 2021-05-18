@@ -1,3 +1,4 @@
+<ng-container *ngIf="vehiclesData?.response">
 <table class="table">
 	<thead>
 		<tr>
@@ -8,23 +9,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>Larry</td>
-			<td>the Bird</td>
-			<td>@twitter</td>
+		<tr *ngFor="let vehicleData of vehiclesData.response; index as i">
+			<th scope="row">{{ i }}</th>
+			<td>{{ vehicleData.plate }}</td>
+			<td>{{ vehicleData.speed }}</td>
+			<td>{{ vehicleData.lastEngineOnTime }}</td>
 		</tr>
 	</tbody>
 </table>
+</ng-container>

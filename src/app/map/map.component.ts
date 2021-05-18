@@ -30,10 +30,10 @@ export class MapComponent implements OnInit {
 				center: this.center,
 			});
 
-			const markerStart = new google.maps.Marker({
-				position: this.center,
-				map: this.map,
-			});
+			// const markerStart = new google.maps.Marker({
+			// 	position: this.center,
+			// 	map: this.map,
+			// });
 		});
 	}
 }

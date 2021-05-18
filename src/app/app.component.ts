@@ -1,3 +1,4 @@
+import { StaticPayload } from './types/index';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'fleet-app';
+	lastGPSData: StaticPayload;
+
+	onLastVehiclesDataChange(eventArgs: any) {
+		this.lastGPSData = eventArgs;
+		console.log(eventArgs);
+	}
 }

@@ -5,11 +5,11 @@
 		</div>
 	</div>
 
-	<search-form></search-form>
+	<search-form (change)="onLastVehiclesDataChange($event)"></search-form>
 	<div class="row">
 		<div class="col-sm-6 first-column">
-			<search-results></search-results>
-			<trip-summary></trip-summary>
+			<search-results [vehiclesList]="lastGPSData"></search-results>
+			<trip-summary *ngIf="lastGPSData?.response"></trip-summary>
 		</div>
 		<div class="col-sm-6 second-column">
 			<map-view></map-view>
