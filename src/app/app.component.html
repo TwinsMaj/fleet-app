@@ -12,7 +12,7 @@
 			<trip-summary *ngIf="lastGPSData?.response"></trip-summary>
 		</div>
 		<div class="col-sm-6 second-column">
-			<map-view></map-view>
+			<map-view [vehicleMarkers]="lastGPSData"></map-view>
 		</div>
 	</div>
 </div>

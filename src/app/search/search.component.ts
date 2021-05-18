@@ -1,5 +1,7 @@
+import { EVENT_DISPLAY_MARKERS } from './../common/constants';
+import { EventService } from './../services/event.service';
 import { errorHandler } from './../common/error-handler';
-import { StaticPayload } from './../types/index';
+import { StaticPayload, EventInfo } from './../types/index';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TokenValidator } from '../common/validators/token.validator';
@@ -18,7 +20,7 @@ export class SearchComponent implements OnInit {
 		token: new FormControl('', [Validators.required, TokenValidator.noWhiteSpace]),
 	});
 
-	constructor(private service: StaticGpsService) {}
+	constructor(private service: StaticGpsService, private eventService: EventService) {}
 
 	ngOnInit(): void {}
 
@@ -27,7 +29,12 @@ export class SearchComponent implements OnInit {
 
 		this.service.getAll(param).subscribe((data) => {
 			this.lastGPSData = data;
+
 			this.change.emit(this.lastGPSData);
+			this.eventService.emit<EventInfo>({
+				type: EVENT_DISPLAY_MARKERS,
+				payload: this.lastGPSData,
+			});
 		}, errorHandler);
 
 		apiToken.value = '';

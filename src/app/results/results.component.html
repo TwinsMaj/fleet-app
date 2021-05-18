@@ -1,20 +1,20 @@
 <ng-container *ngIf="vehiclesData?.response">
-<table class="table">
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Name</th>
-			<th>Speed</th>
-			<th>Last Update</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let vehicleData of vehiclesData.response; index as i">
-			<th scope="row">{{ i }}</th>
-			<td>{{ vehicleData.plate }}</td>
-			<td>{{ vehicleData.speed }}</td>
-			<td>{{ vehicleData.lastEngineOnTime }}</td>
-		</tr>
-	</tbody>
-</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Speed</th>
+				<th>Last Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let vehicleData of vehiclesData.response; index as i">
+				<th scope="row">{{ i }}</th>
+				<td>{{ vehicleData.plate }}</td>
+				<td>{{ vehicleData.speed }}</td>
+				<td>{{ vehicleData.lastEngineOnTime }}</td>
+			</tr>
+		</tbody>
+	</table>
 </ng-container>

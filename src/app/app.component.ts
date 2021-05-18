@@ -12,6 +12,5 @@ export class AppComponent {
 
 	onLastVehiclesDataChange(eventArgs: any) {
 		this.lastGPSData = eventArgs;
-		console.log(eventArgs);
 	}
 }

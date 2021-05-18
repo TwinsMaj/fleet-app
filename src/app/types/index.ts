@@ -4,6 +4,17 @@ export type StaticPayload = {
 	response: LastVehicleData[];
 };
 
+export type RealTimePayload = {
+	status: number;
+	meta: SimpleObject;
+	response: RealVehicleData[];
+};
+
+export type EventInfo = {
+	type: string;
+	payload: RealTimePayload | StaticPayload;
+};
+
 export type SimpleObject = { [key: string]: string };
 
 export type LastVehicleData = {
@@ -52,7 +63,7 @@ export type LastVehicleData = {
 	plate: string;
 };
 
-export type RealtimePayload = {
+export type RealVehicleData = {
 	timestamp: string;
 	ServerGenerated: string | null;
 	Din1: number | null;
