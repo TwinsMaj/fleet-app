@@ -1,18 +1,20 @@
-<form class="date-picker form-inline">
+<form [formGroup]="filterForm" (ngSubmit)="getRealtimeDataBy(date)">
 	<div class="date-picker__group form-group">
 		<label for="date" class="date-picker__label">Date</label>
 		<input
 			id="date"
+			type="date"
+			formControlName="period"
 			class="form-control date-picker__input"
 			placeholder="yyyy-mm-dd"
 			name="datepicker"
-			[(ngModel)]="model"
-			ngbDatepicker
-			#d="ngbDatepicker"
+			#date
 		/>
+		<div *ngIf="filterCtrl.period.touched && filterCtrl.period.invalid" class="alert alert-danger date-picker__error">
+			<div *ngIf="filterCtrl.period.errors?.required">Date is required</div>
+		</div>
+		<button [disabled]="!filterForm.valid" class="date-picker__btn btn btn-primary">Go</button>
 	</div>
-	<button class="btn btn-outline-secondary" (click)="d.toggle()">
-		<fa-icon [icon]="faCalendar"></fa-icon>
-	</button>
-	<button class="date-picker__btn btn btn-primary">Go</button>
+
+
 </form>

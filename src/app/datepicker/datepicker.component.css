@@ -1,6 +1,8 @@
 .date-picker {
-    margin-top: 50px;
+    position: relative;
+    margin-top: 60px;
     display: flex;
+    align-items: flex-start;
 }
 
 .date-picker__input {
@@ -13,6 +15,7 @@
 
 .date-picker__group {
     display: flex;
+    align-items: flex-start;
 }
 
 .date-picker__btn {
@@ -21,4 +24,14 @@
 
 .date-picker__label {
     padding-top: 8px;
+}
+
+.date-picker__error {
+    position: absolute;
+    top: -60px;
+
+}
+
+.date-picker__btn {
+    margin-left: 12px;
 }

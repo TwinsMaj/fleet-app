@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RealtimeGpsService } from './realtime-gps.service';
+import { RealTimeGpsService } from './real-time-gps.service';
 
-describe('RealtimeGpsService', () => {
-	let service: RealtimeGpsService;
+describe('RealTimeGpsService', () => {
+	let service: RealTimeGpsService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({});
-		service = TestBed.inject(RealtimeGpsService);
+		service = TestBed.inject(RealTimeGpsService);
 	});
 
 	it('should be created', () => {

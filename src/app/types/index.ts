@@ -4,6 +4,11 @@ export type StaticPayload = {
 	response: LastVehicleData[];
 };
 
+export type SearchData = {
+	key: string;
+	payload: StaticPayload;
+};
+
 export type RealTimePayload = {
 	status: number;
 	meta: SimpleObject;

@@ -8,8 +8,8 @@
 	<search-form (change)="onLastVehiclesDataChange($event)"></search-form>
 	<div class="row">
 		<div class="col-sm-6 first-column">
-			<search-results [vehiclesList]="lastGPSData"></search-results>
-			<trip-summary *ngIf="lastGPSData?.response"></trip-summary>
+			<search-results [vehiclesList]="lastGPSData" (change)="onSelectResultItem($event)"></search-results>
+			<trip-summary  [apiToken]="apiKey" [itemID]="vehicleID" *ngIf="lastGPSData?.response"></trip-summary>
 		</div>
 		<div class="col-sm-6 second-column">
 			<map-view [vehicleMarkers]="lastGPSData"></map-view>

@@ -1,4 +1,4 @@
-import { StaticPayload } from './types/index';
+import { StaticPayload, SearchData } from './types/index';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,9 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'fleet-app';
+	apiKey: string;
 	lastGPSData: StaticPayload;
+	vehicleID: number;
 
-	onLastVehiclesDataChange(eventArgs: any) {
-		this.lastGPSData = eventArgs;
+	onLastVehiclesDataChange(eventArgs: SearchData) {
+		const { key, payload } = eventArgs;
+		this.apiKey = key;
+		this.lastGPSData = payload;
+	}
+
+	onSelectResultItem(eventArgs: any) {
+		this.vehicleID = eventArgs;
 	}
 }

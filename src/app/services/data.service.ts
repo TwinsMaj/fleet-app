@@ -11,10 +11,10 @@ import { throwError, Observable } from 'rxjs';
 export class DataService {
 	constructor(private url: string, private http: HttpClient) {}
 
-	getAll(queryString?: string): Observable<StaticPayload> {
+	getAll(queryString?: string) {
 		const options = { params: new HttpParams({ fromString: queryString }) };
 
-		return this.http.get<StaticPayload>(this.url, options).pipe(
+		return this.http.get(this.url, options).pipe(
 			map((data) => data),
 			catchError(this.handleError),
 		);

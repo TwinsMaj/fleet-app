@@ -9,7 +9,9 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let vehicleData of vehiclesData.response; index as i">
+			<tr
+				*ngFor="let vehicleData of vehiclesData.response; index as i"
+				(click)="selectVehicle(vehicleData.objectId)">
 				<th scope="row">{{ i }}</th>
 				<td>{{ vehicleData.plate }}</td>
 				<td>{{ vehicleData.speed }}</td>
